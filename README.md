@@ -31,6 +31,13 @@ The reference graph contains five assurance record types:
 - **CONTROL:** Measure addressing a requirement.
 - **EVIDENCE:** Information used to evaluate an assurance condition.
 
+For readability, the manuscript uses A-DATA-INT,
+E-DATA-INT, and CTL-DATA-INT for the records
+identified as A-TEL, E-TEL, and CTL-TEL,
+respectively, in the evaluation dataset.
+These are naming differences only; the
+underlying records and relationships are unchanged.
+
 The graph defines four relationship types:
 
 - `REQUIRES_ASSUMPTION`: Identifies a required assumption.
