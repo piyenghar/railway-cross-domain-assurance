@@ -1,0 +1,134 @@
+{
+  "model_id": "railway-monitor-I-03",
+  "description": "A violated assumption is connected by an informational dependency.",
+  "context": {
+    "configuration": "track-cfg-1",
+    "operating_conditions": "nominal_infrastructure_monitoring"
+  },
+  "nodes": [
+    {
+      "id": "C-MON",
+      "node_type": "CLAIM",
+      "viewpoint": "SAFETY",
+      "condition": "monitoring_supports_infrastructure_decisions",
+      "statement": "The monitoring function may support infrastructure decisions only while its sensor-input and telemetry-integrity conditions hold."
+    },
+    {
+      "id": "A-SENSOR",
+      "node_type": "ASSUMPTION",
+      "viewpoint": "AI",
+      "condition": "trustworthy_sensor_inputs",
+      "statement": "Sensor inputs used by the monitoring function are trustworthy for the documented operating conditions."
+    },
+    {
+      "id": "A-TEL",
+      "node_type": "ASSUMPTION",
+      "viewpoint": "CYBERSECURITY",
+      "condition": "telemetry_integrity",
+      "statement": "Telemetry reaching the monitoring function has not been altered in transit."
+    },
+    {
+      "id": "REQ-DEC",
+      "node_type": "REQUIREMENT",
+      "viewpoint": "SAFETY",
+      "condition": "decision_support_bound",
+      "statement": "Monitoring output is advisory and does not by itself authorise train movement."
+    },
+    {
+      "id": "CTL-TEL",
+      "node_type": "CONTROL",
+      "viewpoint": "CYBERSECURITY",
+      "condition": "telemetry_integrity",
+      "statement": "Integrity checking is applied on the telemetry path."
+    },
+    {
+      "id": "E-AI-VAL",
+      "node_type": "EVIDENCE",
+      "viewpoint": "AI",
+      "condition": "trustworthy_sensor_inputs",
+      "statement": "Validation report for the infrastructure-monitoring model.",
+      "reported_outcome": "established",
+      "covered_configuration": "track-cfg-1",
+      "operating_conditions": "nominal_infrastructure_monitoring",
+      "provenance_id": "VAL-REP-001"
+    },
+    {
+      "id": "E-TEL",
+      "node_type": "EVIDENCE",
+      "viewpoint": "CYBERSECURITY",
+      "condition": "telemetry_integrity",
+      "statement": "Telemetry integrity test for the monitoring path.",
+      "reported_outcome": "established",
+      "covered_configuration": "track-cfg-1",
+      "operating_conditions": "nominal_infrastructure_monitoring",
+      "provenance_id": "SEC-LOG-001"
+    },
+    {
+      "id": "A-NOISE",
+      "node_type": "ASSUMPTION",
+      "viewpoint": "AI",
+      "condition": "unrelated_model_note",
+      "statement": "An assumption recorded only as an informational dependency."
+    },
+    {
+      "id": "E-NOISE",
+      "node_type": "EVIDENCE",
+      "viewpoint": "AI",
+      "condition": "unrelated_model_note",
+      "statement": "The informational assumption is violated by applicable evidence.",
+      "reported_outcome": "violated",
+      "covered_configuration": "track-cfg-1",
+      "operating_conditions": "nominal_infrastructure_monitoring",
+      "provenance_id": "NOISE-1"
+    }
+  ],
+  "relationships": [
+    {
+      "id": "L-REQ-SENSOR",
+      "relationship_type": "REQUIRES_ASSUMPTION",
+      "source": "C-MON",
+      "target": "A-SENSOR"
+    },
+    {
+      "id": "L-DEP-TEL",
+      "relationship_type": "DEPENDS_ON",
+      "source": "C-MON",
+      "target": "A-TEL",
+      "necessary": true
+    },
+    {
+      "id": "L-SUP-AI",
+      "relationship_type": "SUPPORTED_BY",
+      "source": "A-SENSOR",
+      "target": "E-AI-VAL",
+      "mandatory": true
+    },
+    {
+      "id": "L-SUP-TEL",
+      "relationship_type": "SUPPORTED_BY",
+      "source": "A-TEL",
+      "target": "E-TEL",
+      "mandatory": true
+    },
+    {
+      "id": "L-ADDR",
+      "relationship_type": "ADDRESSES_REQUIREMENT",
+      "source": "CTL-TEL",
+      "target": "REQ-DEC"
+    },
+    {
+      "id": "L-NOISE-EV",
+      "relationship_type": "SUPPORTED_BY",
+      "source": "A-NOISE",
+      "target": "E-NOISE",
+      "mandatory": true
+    },
+    {
+      "id": "L-NOISE",
+      "relationship_type": "DEPENDS_ON",
+      "source": "C-MON",
+      "target": "A-NOISE",
+      "necessary": false
+    }
+  ]
+}

@@ -1,0 +1,185 @@
+{
+  "case_count": 30,
+  "cases": [
+    {
+      "case_id": "I-01",
+      "category": "intact_negative_control",
+      "input": "evaluation/cases/I-01.json",
+      "purpose": "Reference model with both required conditions established."
+    },
+    {
+      "case_id": "I-02",
+      "category": "intact_negative_control",
+      "input": "evaluation/cases/I-02.json",
+      "purpose": "An applicable violated record is present and is not linked to the claim."
+    },
+    {
+      "case_id": "I-03",
+      "category": "intact_negative_control",
+      "input": "evaluation/cases/I-03.json",
+      "purpose": "A violated assumption is connected by an informational dependency."
+    },
+    {
+      "case_id": "I-04",
+      "category": "intact_negative_control",
+      "input": "evaluation/cases/I-04.json",
+      "purpose": "Two applicable telemetry records agree that the condition is established."
+    },
+    {
+      "case_id": "I-05",
+      "category": "intact_negative_control",
+      "input": "evaluation/cases/I-05.json",
+      "purpose": "One declared alternative path fails and another, for a different condition, is established."
+    },
+    {
+      "case_id": "I-06",
+      "category": "intact_negative_control",
+      "input": "evaluation/cases/I-06.json",
+      "purpose": "Unused evidence documents a different configuration and a different condition."
+    },
+    {
+      "case_id": "M-01",
+      "category": "missing_support",
+      "input": "evaluation/cases/M-01.json",
+      "purpose": "The mandatory telemetry evidence obligation names no evidence record."
+    },
+    {
+      "case_id": "M-02",
+      "category": "missing_support",
+      "input": "evaluation/cases/M-02.json",
+      "purpose": "The required AI assumption has no evidence link and no evidence obligation."
+    },
+    {
+      "case_id": "M-03",
+      "category": "missing_support",
+      "input": "evaluation/cases/M-03.json",
+      "purpose": "Telemetry evidence remains in the model but is not linked to A-TEL."
+    },
+    {
+      "case_id": "M-04",
+      "category": "missing_support",
+      "input": "evaluation/cases/M-04.json",
+      "purpose": "The telemetry obligation names only evidence outside the assessment configuration."
+    },
+    {
+      "case_id": "M-05",
+      "category": "missing_support",
+      "input": "evaluation/cases/M-05.json",
+      "purpose": "An additional required assumption has no supporting evidence."
+    },
+    {
+      "case_id": "M-06",
+      "category": "missing_support",
+      "input": "evaluation/cases/M-06.json",
+      "purpose": "Applicable telemetry evidence is present and its outcome is not established."
+    },
+    {
+      "case_id": "C-01",
+      "category": "contradictory_evidence",
+      "input": "evaluation/cases/C-01.json",
+      "purpose": "Two applicable cybersecurity records assert opposite telemetry outcomes."
+    },
+    {
+      "case_id": "C-02",
+      "category": "contradictory_evidence",
+      "input": "evaluation/cases/C-02.json",
+      "purpose": "Safety and cybersecurity records assert opposite outcomes for the same telemetry condition."
+    },
+    {
+      "case_id": "C-03",
+      "category": "contradictory_evidence",
+      "input": "evaluation/cases/C-03.json",
+      "purpose": "Two applicable AI validation records assert opposite sensor-input outcomes."
+    },
+    {
+      "case_id": "C-04",
+      "category": "contradictory_evidence",
+      "input": "evaluation/cases/C-04.json",
+      "purpose": "Three applicable telemetry records include both established and violated outcomes."
+    },
+    {
+      "case_id": "C-05",
+      "category": "contradictory_evidence",
+      "input": "evaluation/cases/C-05.json",
+      "purpose": "Two established telemetry records are explicitly declared incompatible."
+    },
+    {
+      "case_id": "C-06",
+      "category": "contradictory_evidence",
+      "input": "evaluation/cases/C-06.json",
+      "purpose": "An unlinked applicable record contradicts the telemetry evidence that supports A-TEL."
+    },
+    {
+      "case_id": "A-01",
+      "category": "applicability_conflict",
+      "input": "evaluation/cases/A-01.json",
+      "purpose": "AI validation evidence explicitly covers a different configuration."
+    },
+    {
+      "case_id": "A-02",
+      "category": "applicability_conflict",
+      "input": "evaluation/cases/A-02.json",
+      "purpose": "Telemetry evidence explicitly documents different operating conditions."
+    },
+    {
+      "case_id": "A-03",
+      "category": "applicability_conflict",
+      "input": "evaluation/cases/A-03.json",
+      "purpose": "AI validation evidence differs in both configuration and operating conditions."
+    },
+    {
+      "case_id": "A-04",
+      "category": "applicability_conflict",
+      "input": "evaluation/cases/A-04.json",
+      "purpose": "AI validation evidence documents neither configuration nor operating conditions."
+    },
+    {
+      "case_id": "A-05",
+      "category": "applicability_conflict",
+      "input": "evaluation/cases/A-05.json",
+      "purpose": "AI validation evidence matches the configuration and omits operating conditions."
+    },
+    {
+      "case_id": "A-06",
+      "category": "applicability_conflict",
+      "input": "evaluation/cases/A-06.json",
+      "purpose": "Used AI evidence is violated and also outside the assessment configuration."
+    },
+    {
+      "case_id": "X-01",
+      "category": "cross_domain_dependency",
+      "input": "evaluation/cases/X-01.json",
+      "purpose": "Applicable telemetry evidence is violated. AI validation evidence stays established."
+    },
+    {
+      "case_id": "X-02",
+      "category": "cross_domain_dependency",
+      "input": "evaluation/cases/X-02.json",
+      "purpose": "Applicable AI validation evidence is violated. Telemetry evidence stays established."
+    },
+    {
+      "case_id": "X-03",
+      "category": "cross_domain_dependency",
+      "input": "evaluation/cases/X-03.json",
+      "purpose": "A three-level chain: safety claim, AI claim, violated telemetry assumption."
+    },
+    {
+      "case_id": "X-04",
+      "category": "cross_domain_dependency",
+      "input": "evaluation/cases/X-04.json",
+      "purpose": "The same three-level chain with telemetry evidence not established."
+    },
+    {
+      "case_id": "X-05",
+      "category": "cross_domain_dependency",
+      "input": "evaluation/cases/X-05.json",
+      "purpose": "Applicable AI evidence and applicable telemetry evidence are both violated."
+    },
+    {
+      "case_id": "X-06",
+      "category": "cross_domain_dependency",
+      "input": "evaluation/cases/X-06.json",
+      "purpose": "Telemetry evidence is violated and an unrelated violated record is also present."
+    }
+  ]
+}
